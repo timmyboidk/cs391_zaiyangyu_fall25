@@ -1,6 +1,6 @@
 function power(base, exp) {
     let result = 1;
-    // Requirement: Must use a for loop for the power function.
+    //Must use a for loop for the power function.
     for (let i = 0; i < exp; i++) {
         result *= base;
     }
@@ -44,7 +44,7 @@ function performOperation(operation) {
 
     outputElement.innerHTML = result;
 
-    // Requirement: Display negative results in red.
+    //Display negative results in red.
     if (result < 0) {
         outputElement.style.color = 'red';
         outputElement.style.backgroundColor = 'transparent';
