@@ -188,7 +188,6 @@ footer a:hover {
 .calculator {
     background-color: rgba(238, 230, 202, 0.2);
     backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 8px;
     padding: 20px;
@@ -213,7 +212,7 @@ input[type=number]::-webkit-outer-spin-button {
     margin: 0;
 }
 input[type=number] {
-    -moz-appearance: textfield;
+    appearance: textfield;
 }
 
 .calculator .buttons {
