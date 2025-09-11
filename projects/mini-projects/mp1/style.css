@@ -1,8 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Helvetica, Arial, sans-serif;
+    font-family: 'Roboto', Helvetica, Arial, sans-serif;
 }
 
 header, footer {
@@ -21,6 +23,7 @@ body {
     margin-right: auto;
     border-left: 1px solid #EEE6CA;
     border-right: 1px solid #EEE6CA;
+    font-size: calc(1rem + 0.2vw);
 }
 
 
@@ -30,11 +33,11 @@ header {
     text-align: left;
 }
 header p {
-    font-size: 20px;
+    font-size: calc(1rem + 0.25vw);
     color: #EEE6CA;
 }
 header h1 {
-    font-size: 40px;
+    font-size: calc(1.75rem + 1.5vw);
     font-weight: 300;
 }
 
@@ -71,7 +74,7 @@ main {
 main h2 {
     color: #896C6C;
     margin-bottom: 15px;
-    font-size: 30px;
+    font-size: calc(1.25rem + 1vw);
     font-weight: 300;
     border-bottom: 2px solid #E5BEB5;
     padding-bottom: 10px;
@@ -135,13 +138,13 @@ footer a {
 }
 
 .landing-content h1 {
-    font-size: 60px;
+    font-size: calc(2.25rem + 2.5vw);
     margin-bottom: 10px;
     font-weight: 300;
 }
 
 .landing-content p {
-    font-size: 20px;
+    font-size: calc(1rem + 0.25vw);
     margin-bottom: 30px;
     color: #EEE6CA;
 }
@@ -149,7 +152,7 @@ footer a {
 .cta-button {
     display: inline-block;
     padding: 15px 30px;
-    font-size: 20px;
+    font-size: calc(1rem + 0.25vw);
     font-weight: bold;
     color: #896C6C;
     background-color: #F5FAE1;
@@ -203,7 +206,7 @@ footer a {
     color: #896C6C;
     border: 1px solid #d1a9a0;
     border-radius: 8px;
-    font-size: 20px;
+    font-size: calc(1rem + 0.25vw);
     font-weight: bold;
     padding: 15px 10px;
 }
@@ -222,12 +225,20 @@ footer a {
     color: #896C6C;
     border-radius: 5px;
     padding: 10px;
-    font-size: 30px;
+    font-size: calc(1.25rem + 1vw);
     min-height: 40px;
 }
 
 /* smaller than 750px */
 @media screen and (max-width: 750px) {
+    header, footer {
+        padding: 20px 15px;
+    }
+    
+    main {
+        padding: 20px;
+    }
+    
     /* Hcenter-aligned */
     header {
         text-align: center;
@@ -253,4 +264,3 @@ footer a {
         margin: 5px;
     }
 }
-
