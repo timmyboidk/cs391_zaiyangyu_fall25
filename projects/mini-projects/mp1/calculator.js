@@ -44,8 +44,8 @@ function performOperation(operation) {
 
     outputElement.innerHTML = result;
 
-    //Display negative results in red.
-    if (result < 0) {
+    //Display negative results in red. variable can sometimes be a string
+    if (typeof result === 'number' && result < 0) {
         outputElement.style.color = 'red';
         outputElement.style.backgroundColor = 'transparent';
     } else {
