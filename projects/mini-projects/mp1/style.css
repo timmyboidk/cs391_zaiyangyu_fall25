@@ -233,45 +233,36 @@ footer a {
 
 /* <750px */
 @media screen and (max-width: 750px) {
-    header, footer {
-        padding: 20px 15px;
-    }
-
-    main {
-        padding: 20px;
-    }
-
-    header {
-        text-align: center;
-    }
-
-    nav, main {
-        width: 100%;
-        border-right: none;
-    }
-
-    .profile-pic {
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    /* --- START OF NAV CHANGES for smaller screens --- */
+    /* --- START OF FINAL NAV CHANGES --- */
     nav {
-        padding: 10px 5px; /* Add some padding to the nav container */
+        padding: 0; /* Remove padding from the container */
+        border-right: none;
+        background-color: #896C6C; /* Set the background for the whole bar */
     }
 
     nav ul {
-        display: flex; /* Use flexbox for horizontal alignment */
-        flex-wrap: nowrap; /* This forces the items into a single line */
-        overflow-x: auto; /* Adds a scrollbar if items overflow */
-        justify-content: flex-start; /* Aligns items to the start */
+        display: flex; /* Use flex to distribute space */
+        text-align: center;
+        list-style: none;
+    }
+
+    nav ul li {
+        flex: 1; /* Allow each item to grow and fill the available space */
     }
 
     nav ul li a {
-        flex-shrink: 0; /* Prevents links from shrinking */
-        font-size: 0.9rem; /* Slightly smaller font to help items fit */
-        padding: 8px 10px; /* Adjust padding for a squeezed look */
-        margin: 0 4px; /* Add a small gap between buttons */
+        background: none; /* Remove individual button backgrounds */
+        color: #F5FAE1;
+        margin-bottom: 0;
+        border-radius: 0;
+        /* Use a responsive font-size to "zoom" the text to fit */
+        font-size: calc(0.5rem + 1vw);
+        padding: 10px 5px; /* Adjust padding for the bar look */
+        border-right: 1px solid #EEE6CA; /* Add separators */
     }
-    /* --- END OF NAV CHANGES for smaller screens --- */
+
+    nav ul li:last-child a {
+        border-right: none; /* Remove separator from the last link */
+    }
+    /* --- END OF FINAL NAV CHANGES --- */
 }
