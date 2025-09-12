@@ -238,7 +238,7 @@ footer a {
     }
 
     nav ul {
-        display: inline;
+        display: flex;
         width: 100%;
     }
 
