@@ -232,16 +232,11 @@ footer a {
 
 /* smaller than 750px */
 @media screen and (max-width: 750px) {
-
-    /* --- FINAL NAV CHANGES START --- */
-
-    /* Treat the entire nav area as the colored bar */
     nav {
         padding: 0;
         background-color: #896C6C;
     }
 
-    /* Use flexbox to create the evenly distributed grid */
     nav ul {
         display: inline;
         width: 100%;
@@ -249,7 +244,6 @@ footer a {
 
     /* Make each list item expand to fill the space */
     nav ul li {
-        flex: 1; /* This is the key to evenly distributing the space */
         text-align: center;
     }
 
@@ -267,5 +261,4 @@ footer a {
     nav ul li:last-child a {
         border-right: none;
     }
-    /* --- FINAL NAV CHANGES END --- */
 }
