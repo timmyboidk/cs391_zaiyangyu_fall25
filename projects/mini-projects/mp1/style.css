@@ -240,7 +240,7 @@ footer a {
 
     main {
         padding: 20px;
-        text-align: center; /* Center main content text */
+        text-align: center; 
     }
 
     main h2 {
@@ -248,7 +248,7 @@ footer a {
     }
 
     main p {
-        text-align: left; /* Keep paragraphs left-aligned for readability */
+        text-align: left; 
     }
 
     nav, main {
@@ -261,7 +261,6 @@ footer a {
         margin-right: auto;
     }
 
-    /* --- FINAL NAV CHANGES for smaller screens --- */
 
     nav {
         background-color: #896C6C;
@@ -269,17 +268,17 @@ footer a {
     }
 
     nav ul {
-        display: flex; /* Use flexbox to align items in a row */
-        gap: 5px; /* Add a small gap between buttons */
+        display: flex; 
+        gap: 5px; 
     }
 
     nav ul li {
-        flex: 1; /* Make each button expand to fill space evenly */
+        flex: 1; 
     }
 
     nav ul li a {
-        background-color: #E5BEB5; /* Button color */
-        color: #5C4B4B; /* Dark text for contrast */
+        background-color: #E5BEB5; 
+        color: #5C4B4B; 
         border: 1px solid #d1a9a0;
         border-radius: 3px;
         font-size: 0.8rem;
