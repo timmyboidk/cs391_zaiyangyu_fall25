@@ -51,25 +51,17 @@ nav {
 
 nav ul {
     list-style-type: none;
-    display: flex;
-    background-color: #896C6C;
-    border-radius: 5px;
 }
-nav ul li {
-    flex: 1; /* Each item will take up equal space */
-    text-align: center;
-    border-right: 1px solid #EEE6CA; /* Separator line */
-}
-nav ul li:last-child {
-    border-right: none;
-}
+
 nav ul li a {
     display: block;
     padding: 12px 15px;
+    margin-bottom: 8px;
+    background-color: #896C6C;
     color: #F5FAE1;
     text-decoration: none;
+    border-radius: 5px;
 }
-
 /* for screens > 750px */
 main {
     width: 70%;
@@ -97,11 +89,6 @@ main p, main ul {
     line-height: 1.7;
     margin-bottom: 15px;
 }
-
-main ul {
-    padding-left: 20px;
-}
-
 .profile-pic {
     display: block;
     max-width: 250px;
@@ -254,20 +241,29 @@ footer a {
     /* 100% width */
     nav, main {
         width: 100%;
+        border-right: none; 
     }
-    
+
     .profile-pic {
         margin-left: auto;
         margin-right: auto;
     }
 
-    /* horizontal */
+    /* horizontal bar */
     nav ul {
         display: flex;
         flex-wrap: wrap;
+        background-color: #896C6C;
+        padding: 5px 0;
+        border-radius: 5px;
     }
-
     nav ul li {
-        margin: 5px;
+        flex: 1; 
+        text-align: center;
+    }
+    nav ul li a {
+        background-color: transparent;
+        margin-bottom: 0;
+        padding: 10px 5px; 
     }
 }
