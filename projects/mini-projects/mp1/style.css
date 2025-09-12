@@ -245,9 +245,9 @@ footer a {
         text-align: center;
     }
 
-    /* 100% width */
     nav, main {
         width: 100%;
+        border-right: none;
     }
 
     .profile-pic {
@@ -255,29 +255,23 @@ footer a {
         margin-right: auto;
     }
 
-
+    /* --- START OF NAV CHANGES for smaller screens --- */
     nav {
-        padding: 10px 0; 
+        padding: 10px 5px; /* Add some padding to the nav container */
     }
 
     nav ul {
-        text-align: center; 
-        list-style: none; 
-    }
-
-    nav ul li {
-        display: inline; 
-        border-right: 1px solid #5C4B4B; 
-        padding: 0 10px; 
-    }
-
-    nav ul li:last-child {
-        border-right: none; 
+        display: flex; /* Use flexbox for horizontal alignment */
+        flex-wrap: nowrap; /* This forces the items into a single line */
+        overflow-x: auto; /* Adds a scrollbar if items overflow */
+        justify-content: flex-start; /* Aligns items to the start */
     }
 
     nav ul li a {
-        background: none; 
-        margin-bottom: 0;
-        color: #5C4B4B; 
+        flex-shrink: 0; /* Prevents links from shrinking */
+        font-size: 0.9rem; /* Slightly smaller font to help items fit */
+        padding: 8px 10px; /* Adjust padding for a squeezed look */
+        margin: 0 4px; /* Add a small gap between buttons */
     }
+    /* --- END OF NAV CHANGES for smaller screens --- */
 }
