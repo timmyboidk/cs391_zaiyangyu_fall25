@@ -232,34 +232,57 @@ footer a {
 
 /* smaller than 750px */
 @media screen and (max-width: 750px) {
-    nav {
-        padding: 0;
-        background-color: #896C6C;
-    }
-
-    nav ul {
-        display: flex;
-        justify-content: center;
-        width: 100%;
-    }
-
-    /* Make each list item expand to fill the space */
-    nav ul li {
+    header, footer {
+        padding: 20px 15px;
         text-align: center;
     }
 
-    /* Style the links to act as the grid cells */
-    nav ul li a {
-        background: none; /* Remove individual button backgrounds */
-        color: #F5FAE1;
-        margin-bottom: 0;
-        border-radius: 0; /* Remove rounded corners for a bar look */
-        padding: 10px 5px;
-        border-right: 1px solid #EEE6CA; /* Add separators */
+    main {
+        padding: 20px;
+        text-align: center; /* Center main content text */
     }
 
-    /* Remove the separator from the very last link */
-    nav ul li:last-child a {
+    main h2 {
+        text-align: center;
+    }
+
+    main p {
+        text-align: left; /* Keep paragraphs left-aligned for readability */
+    }
+
+    nav, main {
+        width: 100%;
         border-right: none;
+    }
+
+    .profile-pic {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* --- FINAL NAV CHANGES for smaller screens --- */
+
+    nav {
+        background-color: #896C6C;
+        padding: 5px;
+    }
+
+    nav ul {
+        display: flex; /* Use flexbox to align items in a row */
+        gap: 5px; /* Add a small gap between buttons */
+    }
+
+    nav ul li {
+        flex: 1; /* Make each button expand to fill space evenly */
+    }
+
+    nav ul li a {
+        background-color: #E5BEB5; /* Button color */
+        color: #5C4B4B; /* Dark text for contrast */
+        border: 1px solid #d1a9a0;
+        border-radius: 3px;
+        font-size: 0.8rem;
+        margin-bottom: 0;
+        padding: 8px 5px;
     }
 }
