@@ -243,6 +243,11 @@ footer a {
         width: 100%;
         border-right: none; 
     }
+    nav {
+        background-color: #896C6C;
+        border-radius: 5px;
+        padding: 5px;
+    }
 
     .profile-pic {
         margin-left: auto;
@@ -251,15 +256,17 @@ footer a {
 
     /* horizontal bar */
     nav ul {
-        display: flex;
-        flex-wrap: wrap;
-        background-color: #896C6C;
-        padding: 5px 0;
-        border-radius: 5px;
+        list-style: none;
+        padding-left: 0;
+        text-align: center;
     }
     nav ul li {
-        flex: 1; 
-        text-align: center;
+        display: inline; 
+        border-right: 2px solid #EEE6CA; 
+        padding: 0 10px; 
+    }
+    nav ul li:last-child {
+        border-right: none;
     }
     nav ul li a {
         background-color: transparent;
