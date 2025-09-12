@@ -51,16 +51,23 @@ nav {
 
 nav ul {
     list-style-type: none;
+    display: flex;
+    background-color: #896C6C;
+    border-radius: 5px;
 }
-
+nav ul li {
+    flex: 1; /* Each item will take up equal space */
+    text-align: center;
+    border-right: 1px solid #EEE6CA; /* Separator line */
+}
+nav ul li:last-child {
+    border-right: none;
+}
 nav ul li a {
     display: block;
     padding: 12px 15px;
-    margin-bottom: 8px;
-    background-color: #896C6C;
     color: #F5FAE1;
     text-decoration: none;
-    border-radius: 5px;
 }
 
 /* for screens > 750px */
