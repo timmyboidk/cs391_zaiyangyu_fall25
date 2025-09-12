@@ -62,6 +62,7 @@ nav ul li a {
     text-decoration: none;
     border-radius: 5px;
 }
+
 /* for screens > 750px */
 main {
     width: 70%;
@@ -89,6 +90,7 @@ main p, main ul {
     line-height: 1.7;
     margin-bottom: 15px;
 }
+
 .profile-pic {
     display: block;
     max-width: 250px;
@@ -241,36 +243,44 @@ footer a {
     /* 100% width */
     nav, main {
         width: 100%;
-        border-right: none; 
+        border-right: none;
     }
+
+    /* Styles for the nav bar container */
     nav {
         background-color: #896C6C;
         border-radius: 5px;
         padding: 5px;
     }
-
+    
     .profile-pic {
         margin-left: auto;
         margin-right: auto;
     }
 
-    /* horizontal bar */
+    /* horizontal bar for nav */
     nav ul {
         list-style: none;
         padding-left: 0;
-        text-align: center;
+        text-align: center; /* Centers the inline list items */
     }
+
+    /* Style for each navigation item */
     nav ul li {
-        display: inline; 
-        border-right: 2px solid #EEE6CA; 
-        padding: 0 10px; 
+        display: inline; /* Makes list items appear horizontally */
+        border-right: 2px solid #EEE6CA; /* Separator line */
+        padding: 0 10px; /* Spacing between items */
     }
+
+    /* Remove the separator from the very last item */
     nav ul li:last-child {
         border-right: none;
     }
+
+    /* Reset link styles for horizontal bar */
     nav ul li a {
         background-color: transparent;
         margin-bottom: 0;
-        padding: 10px 5px; 
+        padding: 10px 5px;
     }
 }
