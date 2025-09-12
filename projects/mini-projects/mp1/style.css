@@ -51,8 +51,8 @@ nav {
 
 nav ul {
     list-style-type: none;
+    padding: 0;
 }
-
 nav ul li a {
     display: block;
     padding: 12px 15px;
@@ -61,6 +61,7 @@ nav ul li a {
     color: #F5FAE1;
     text-decoration: none;
     border-radius: 5px;
+    text-align: center;
 }
 
 /* for screens > 750px */
@@ -231,37 +232,40 @@ footer a {
 
 /* smaller than 750px */
 @media screen and (max-width: 750px) {
-    header, footer {
-        padding: 20px 15px;
+
+    /* --- FINAL NAV CHANGES START --- */
+
+    /* Treat the entire nav area as the colored bar */
+    nav {
+        padding: 0;
+        background-color: #896C6C;
     }
-    
-    main {
-        padding: 20px;
+
+    /* Use flexbox to create the evenly distributed grid */
+    nav ul {
+        display: inline;
+        width: 100%;
     }
-    
-    /* Hcenter-aligned */
-    header {
+
+    /* Make each list item expand to fill the space */
+    nav ul li {
+        flex: 1; /* This is the key to evenly distributing the space */
         text-align: center;
     }
 
-    /* 100% width */
-    nav, main {
-        width: 100%;
-    }
-    
-    .profile-pic {
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    /* horizontal */
-    nav ul {
-        display: inline;
-        padding: 5px;
-        border-right: 2px #896C6C;
+    /* Style the links to act as the grid cells */
+    nav ul li a {
+        background: none; /* Remove individual button backgrounds */
+        color: #F5FAE1;
+        margin-bottom: 0;
+        border-radius: 0; /* Remove rounded corners for a bar look */
+        padding: 10px 5px;
+        border-right: 1px solid #EEE6CA; /* Add separators */
     }
 
-    nav ul li {
-        margin: 5px;
+    /* Remove the separator from the very last link */
+    nav ul li:last-child a {
+        border-right: none;
     }
+    /* --- FINAL NAV CHANGES END --- */
 }
