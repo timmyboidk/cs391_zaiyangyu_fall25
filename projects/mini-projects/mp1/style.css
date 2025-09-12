@@ -243,15 +243,12 @@ footer a {
 
     /* Use flexbox to create the evenly distributed grid */
     nav ul {
-        text-align: center;
-        white-space: nowrap;
-        overflow-x: auto;
-        padding: 0;
+        display: inline;
+        width: 100%;
     }
 
     /* Make each list item expand to fill the space */
     nav ul li {
-        display: inline-block;
         flex: 1; /* This is the key to evenly distributing the space */
         text-align: center;
     }
