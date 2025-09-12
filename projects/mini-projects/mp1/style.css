@@ -41,9 +41,7 @@ header h1 {
     font-weight: 300;
 }
 
-
-
-/*  > 750px */
+/* Vertical for screens > 750px */
 nav {
     width: 30%;
     background-color: #EEE6CA;
@@ -53,7 +51,6 @@ nav {
 
 nav ul {
     list-style-type: none;
-    padding-left: 0; 
 }
 
 nav ul li a {
@@ -64,9 +61,9 @@ nav ul li a {
     color: #F5FAE1;
     text-decoration: none;
     border-radius: 5px;
-    text-align: center; 
 }
 
+/* for screens > 750px */
 main {
     width: 70%;
     background-color: #ffffff;
@@ -93,6 +90,7 @@ main p, main ul {
     line-height: 1.7;
     margin-bottom: 15px;
 }
+
 main ul {
     padding-left: 20px;
 }
@@ -192,9 +190,9 @@ footer a {
     background-color: rgba(245, 250, 225, 0.9);
     border: 1px solid #E5BEB5;
     color: #896C6C;
-    padding: 8px;
-    width: 100%;
-    margin-bottom: 10px;
+    padding: 8px; 
+    width: 100%; 
+    margin-bottom: 10px; 
 }
 
 .calculator .buttons {
@@ -231,38 +229,38 @@ footer a {
     min-height: 40px;
 }
 
-/* <750px */
+/* smaller than 750px */
 @media screen and (max-width: 750px) {
-    /* --- START OF FINAL NAV CHANGES --- */
-    nav {
-        padding: 0; /* Remove padding from the container */
-        border-right: none;
-        background-color: #896C6C; /* Set the background for the whole bar */
+    header, footer {
+        padding: 20px 15px;
+    }
+    
+    main {
+        padding: 20px;
+    }
+    
+    /* Hcenter-aligned */
+    header {
+        text-align: center;
     }
 
+    /* 100% width */
+    nav, main {
+        width: 100%;
+    }
+    
+    .profile-pic {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* horizontal */
     nav ul {
-        display: flex; /* Use flex to distribute space */
-        text-align: center;
-        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
     }
 
     nav ul li {
-        flex: 1; /* Allow each item to grow and fill the available space */
+        margin: 5px;
     }
-
-    nav ul li a {
-        background: none; /* Remove individual button backgrounds */
-        color: #F5FAE1;
-        margin-bottom: 0;
-        border-radius: 0;
-        /* Use a responsive font-size to "zoom" the text to fit */
-        font-size: calc(0.5rem + 1vw);
-        padding: 10px 5px; /* Adjust padding for the bar look */
-        border-right: 1px solid #EEE6CA; /* Add separators */
-    }
-
-    nav ul li:last-child a {
-        border-right: none; /* Remove separator from the last link */
-    }
-    /* --- END OF FINAL NAV CHANGES --- */
 }
