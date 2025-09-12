@@ -238,7 +238,8 @@ footer a {
     }
 
     nav ul {
-        /* display: block; */
+        display: flex;
+        justify-content: center;
         width: 100%;
     }
 
