@@ -128,7 +128,7 @@ footer a {
     text-decoration: none;
 }
 
-.landing-container {
+/* .landing-container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -149,7 +149,7 @@ footer a {
     font-size: calc(1rem + 0.25vw);
     margin-bottom: 30px;
     color: #EEE6CA;
-}
+} */
 
 .cta-button {
     display: inline-block;
