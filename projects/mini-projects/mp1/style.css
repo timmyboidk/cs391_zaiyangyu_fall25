@@ -41,7 +41,9 @@ header h1 {
     font-weight: 300;
 }
 
-/* Vertical for screens > 750px */
+
+
+/*  > 750px */
 nav {
     width: 30%;
     background-color: #EEE6CA;
@@ -51,6 +53,7 @@ nav {
 
 nav ul {
     list-style-type: none;
+    padding-left: 0; 
 }
 
 nav ul li a {
@@ -61,9 +64,9 @@ nav ul li a {
     color: #F5FAE1;
     text-decoration: none;
     border-radius: 5px;
+    text-align: center; 
 }
 
-/* for screens > 750px */
 main {
     width: 70%;
     background-color: #ffffff;
@@ -89,6 +92,9 @@ main h3 {
 main p, main ul {
     line-height: 1.7;
     margin-bottom: 15px;
+}
+main ul {
+    padding-left: 20px;
 }
 
 .profile-pic {
@@ -186,9 +192,9 @@ footer a {
     background-color: rgba(245, 250, 225, 0.9);
     border: 1px solid #E5BEB5;
     color: #896C6C;
-    padding: 8px; 
-    width: 100%; 
-    margin-bottom: 10px; 
+    padding: 8px;
+    width: 100%;
+    margin-bottom: 10px;
 }
 
 .calculator .buttons {
@@ -225,17 +231,16 @@ footer a {
     min-height: 40px;
 }
 
-/* smaller than 750px */
+/* <750px */
 @media screen and (max-width: 750px) {
     header, footer {
         padding: 20px 15px;
     }
-    
+
     main {
         padding: 20px;
     }
-    
-    /* Hcenter-aligned */
+
     header {
         text-align: center;
     }
@@ -243,44 +248,36 @@ footer a {
     /* 100% width */
     nav, main {
         width: 100%;
-        border-right: none;
     }
 
-    /* Styles for the nav bar container */
-    nav {
-        background-color: #896C6C;
-        border-radius: 5px;
-        padding: 5px;
-    }
-    
     .profile-pic {
         margin-left: auto;
         margin-right: auto;
     }
 
-    /* horizontal bar for nav */
+
+    nav {
+        padding: 10px 0; 
+    }
+
     nav ul {
-        list-style: none;
-        padding-left: 0;
-        text-align: center; /* Centers the inline list items */
+        text-align: center; 
+        list-style: none; 
     }
 
-    /* Style for each navigation item */
     nav ul li {
-        display: inline; /* Makes list items appear horizontally */
-        border-right: 2px solid #EEE6CA; /* Separator line */
-        padding: 0 10px; /* Spacing between items */
+        display: inline; 
+        border-right: 1px solid #5C4B4B; 
+        padding: 0 10px; 
     }
 
-    /* Remove the separator from the very last item */
     nav ul li:last-child {
-        border-right: none;
+        border-right: none; 
     }
 
-    /* Reset link styles for horizontal bar */
     nav ul li a {
-        background-color: transparent;
+        background: none; 
         margin-bottom: 0;
-        padding: 10px 5px;
+        color: #5C4B4B; 
     }
 }
