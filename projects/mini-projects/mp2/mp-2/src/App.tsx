@@ -28,7 +28,10 @@ export default function App() {
             }
         }
 
-        fetchData();
+        fetchData()
+            .then(()=>console.log("Okay"))
+            .catch((e)=>console.log("Not okay"+e));
+
     }, []); // Empty dependency array ensures this runs only once.
 
     return (
