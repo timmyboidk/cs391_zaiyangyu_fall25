@@ -43,7 +43,7 @@ const InfoSection = styled.div`
     margin-top: 10px;
 
     h3 {
-        color: #005a9c;
+        color: #e25ed3;
         border-bottom: 2px solid #f0f8ff;
         padding-bottom: 4px;
         margin-bottom: 8px;
