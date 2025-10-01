@@ -6,7 +6,7 @@ import type {DisneyCharacter} from "./interfaces/DisneyCharacter.ts";
 const ParentDiv = styled.div`
     width: 80vw;
     margin: auto;
-    border: 5px solid #005a9c; /* Disney-themed color */
+     border: 5px solid #005a9c;
 `;
 
 export default function App() {
@@ -15,18 +15,17 @@ export default function App() {
     useEffect(() => {
         async function fetchData(): Promise<void> {
             try {
-                const rawData = await fetch("https://api.disneyapi.dev/character");
-                // The API nests the results in a 'data' property.
+                    const rawData = await fetch("https://api.disneyapi.dev/character");
                 const { data }: { data: DisneyCharacter[] } = await rawData.json();
-                setData(data);
+                    setData(data);
             } catch (e) {
                 if (e instanceof Error) {
-                    console.log("There was an error: " + e.message);
+                        console.log("There was an error: " + e.message);
                 }
             }
         }
         fetchData();
-    }, []); // Runs once
+    }, []);
 
     return (
         <ParentDiv>
