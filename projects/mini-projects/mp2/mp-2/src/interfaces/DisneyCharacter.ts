@@ -5,4 +5,5 @@ export interface DisneyCharacter {
      films: string[];
     tvShows: string[];
     videoGames: string[];
+    parkAttractions: string[];
 }

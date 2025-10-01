@@ -49,6 +49,7 @@ export default function CharacterDisplay(props: { data: DisneyCharacter[] }) {
                         <p><b>Films:</b> {char.films.length > 0 ? char.films.join(', ') : 'None'}</p>
                         <p><b>TV Shows:</b> {char.tvShows.length > 0 ? char.tvShows.join(', ') : 'None'}</p>
                         <p><b>Video Games:</b> {char.videoGames.length > 0 ? char.videoGames.join(', ') : 'None'}</p>
+                         <p><b>Park Attractions:</b> {char.parkAttractions.length > 0 ? char.parkAttractions.join(', ') : 'None'}</p>
                     </SingleCharDiv>
                 ))
             }
