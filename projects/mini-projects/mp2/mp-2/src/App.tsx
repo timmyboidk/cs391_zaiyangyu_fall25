@@ -1,38 +1,36 @@
-import { useEffect, useState } from "react";
-import styled from "styled-components";
-import type {DisneyCharacter} from "./interfaces/DisneyCharacter.ts";
 import CharacterDisplay from "./components/CharacterDisplay.tsx";
+import styled from "styled-components";
+import { useEffect, useState } from "react";
+import type {DisneyCharacter} from "./interfaces/DisneyCharacter.ts";
 
-const AppContainer = styled.div`
-    width: 90vw;
+const ParentDiv = styled.div`
+    width: 80vw;
     margin: auto;
-    border: 5px solid #005a9c;
-    border-radius: 15px;
-    overflow: hidden;
+    border: 5px solid #005a9c; /* Disney-themed color */
 `;
 
 export default function App() {
-    // useState Hook to store character data.
-    const [characters, setCharacters] = useState<DisneyCharacter[]>([]);
+    const [data, setData] = useState<DisneyCharacter[]>([]);
 
-    // useEffect Hook to fetch data from the API when the component mounts.
-    useEffect(() => {async function fetchData(): Promise<void> {
+    useEffect(() => {
+        async function fetchData(): Promise<void> {
             try {
-                const response = await fetch("https://api.disneyapi.dev/character");
+                const rawData = await fetch("https://api.disneyapi.dev/character");
                 // The API nests the results in a 'data' property.
-                const { data }: { data: DisneyCharacter[] } = await response.json();
-                setCharacters(data);} catch (error) {
-                console.error("Failed to fetch Disney characters:", error);}
+                const { data }: { data: DisneyCharacter[] } = await rawData.json();
+                setData(data);
+            } catch (e) {
+                if (e instanceof Error) {
+                    console.log("There was an error: " + e.message);
+                }
+            }
         }
-        fetchData()
-            .then(()=>console.log("Okay"))
-            .catch((e)=>console.log("Not okay"+e));
-
-    }, []); // Empty dependency array ensures this runs only once.
+        fetchData();
+    }, []); // Runs once
 
     return (
-        <AppContainer>
-            <CharacterDisplay data={characters} />
-        </AppContainer>
+        <ParentDiv>
+            <CharacterDisplay data={data} />
+        </ParentDiv>
     );
 }
