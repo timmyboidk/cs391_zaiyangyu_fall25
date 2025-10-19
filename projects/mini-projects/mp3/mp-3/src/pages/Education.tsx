@@ -1,6 +1,20 @@
-export default function Edu(){
+import styled from 'styled-components';
+
+const Main = styled.main`
+  width: 70%;
+  background-color: #ffffff;
+  padding: 30px;
+  min-height: 70vh;
+  ul { padding-left: 20px; }
+
+  @media screen and (max-width: 750px) {
+    width: 100%;
+  }
+`;
+
+export default function Education() {
     return (
-        <main>
+        <Main>
             <section>
                 <h2>Boston University - Boston, MA</h2>
                 <p><strong>Bachelor in Computer Science, Minor in Psychology</strong> (Expected May 2026)</p>
@@ -15,6 +29,7 @@ export default function Edu(){
                     <li>Mobile App Development</li>
                 </ul>
             </section>
-        </main>
-    )
-}
+        </Main>
+    );
+};
+

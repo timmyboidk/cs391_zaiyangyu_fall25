@@ -1,6 +1,28 @@
-export default function Reference(){
+import styled from 'styled-components';
+
+const Main = styled.main`
+  width: 70%;
+  padding: 30px;
+  background-color: #ffffff;
+  min-height: 70vh;
+  ul { padding-left: 20px; }
+  article {
+    border-bottom: 1px solid #EEE6CA;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  @media screen and (max-width: 750px) {
+    width: 100%;
+  }
+`;
+
+export default function Experience(){
     return (
-        <main>
+        <Main>
             <section>
                 <article>
                     <h2>Yicheng Tech - Boston, MA</h2>
@@ -19,6 +41,7 @@ export default function Reference(){
                     </ul>
                 </article>
             </section>
-        </main>
-    )
-}
+        </Main>
+    );
+};
+
