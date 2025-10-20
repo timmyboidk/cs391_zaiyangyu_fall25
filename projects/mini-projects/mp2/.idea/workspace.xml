@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="336aa13c-d847-44e9-9bf7-3b2f26f3d2bc" name="更改" comment="clean up" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="TypeScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;timmyboidk&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/timmyboidk/cs391_zaiyangyu_fall25&quot;,
+    &quot;accountId&quot;: &quot;07a78d7a-d7e8-4080-ae65-7920a2bdb53a&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2
+}</component>
+  <component name="ProjectId" id="331gdNC28llK74SgxaVR9CUPEqW" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/timyu/Desktop/Class/391/cs391_zaiyangyu_fall25/projects/mini-projects/mp2&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Users/timyu/Desktop/Class/391/cs391_zaiyangyu_fall25/projects/mini-projects/mp2/mp-2/node_modules/typescript/lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-9c94529fcfe0-JavaScript-WS-252.26199.162" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="默认任务">
+      <changelist id="336aa13c-d847-44e9-9bf7-3b2f26f3d2bc" name="更改" comment="" />
+      <created>1758490078566</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1758490078566</updated>
+      <workItem from="1758490079621" duration="655000" />
+      <workItem from="1758591503578" duration="614000" />
+      <workItem from="1758659061106" duration="971000" />
+      <workItem from="1758660199847" duration="906000" />
+      <workItem from="1759101189677" duration="802000" />
+      <workItem from="1759178159359" duration="46000" />
+      <workItem from="1759178449756" duration="679000" />
+      <workItem from="1759190991744" duration="1046000" />
+      <workItem from="1759275098764" duration="200000" />
+      <workItem from="1759275310235" duration="220000" />
+      <workItem from="1759287980785" duration="2263000" />
+      <workItem from="1759414564277" duration="232000" />
+    </task>
+    <task id="LOCAL-00001" summary="mp2 initial commit">
+      <option name="closed" value="true" />
+      <created>1758490706714</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1758490706714</updated>
+    </task>
+    <task id="LOCAL-00002" summary="vercel deployment">
+      <option name="closed" value="true" />
+      <created>1758659108625</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1758659108625</updated>
+    </task>
+    <task id="LOCAL-00003" summary="vercel deployment">
+      <option name="closed" value="true" />
+      <created>1758660131780</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1758660131780</updated>
+    </task>
+    <task id="LOCAL-00004" summary="vercel deployment">
+      <option name="closed" value="true" />
+      <created>1758660222953</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1758660222953</updated>
+    </task>
+    <task id="LOCAL-00005" summary="vercel deployment">
+      <option name="closed" value="true" />
+      <created>1758660988223</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1758660988223</updated>
+    </task>
+    <task id="LOCAL-00006" summary="vercel deployment">
+      <option name="closed" value="true" />
+      <created>1758661004524</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1758661004524</updated>
+    </task>
+    <task id="LOCAL-00007" summary="vercel deployment">
+      <option name="closed" value="true" />
+      <created>1759179125133</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1759179125133</updated>
+    </task>
+    <task id="LOCAL-00008" summary="clean up">
+      <option name="closed" value="true" />
+      <created>1759275377069</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1759275377069</updated>
+    </task>
+    <task id="LOCAL-00009" summary="clean up">
+      <option name="closed" value="true" />
+      <created>1759288561091</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1759288561091</updated>
+    </task>
+    <task id="LOCAL-00010" summary="clean up">
+      <option name="closed" value="true" />
+      <created>1759289088163</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1759289088163</updated>
+    </task>
+    <task id="LOCAL-00011" summary="clean up">
+      <option name="closed" value="true" />
+      <created>1759289364138</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1759289364138</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="mp2 initial commit" />
+    <MESSAGE value="vercel deployment" />
+    <MESSAGE value="clean up" />
+    <option name="LAST_COMMIT_MESSAGE" value="clean up" />
+  </component>
+</project>
