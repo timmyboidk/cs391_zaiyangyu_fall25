@@ -1,5 +1,5 @@
 import { Route, Routes } from "react-router-dom";
-import { GlobalStyle } from './GlobalStyle';
+import { GlobalStyle } from './GlobalStyle.tsx';
 import styled from 'styled-components';
 import Header from "./Header";
 import Nav from "./Nav";
@@ -17,7 +17,6 @@ const AppWrapper = styled.div`
   flex-wrap: wrap;
   flex-grow: 1; /* This is the key to the sticky footer */
 `;
-
 export default function Root() {
     return (
         <>

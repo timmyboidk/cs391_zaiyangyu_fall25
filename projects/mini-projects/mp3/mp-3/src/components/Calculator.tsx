@@ -59,19 +59,16 @@ export default function Calculator() {
     const [secondNumber, setSecondNumber] = useState<string>('');
     const [output, setOutput] = useState<string | number>('');
     const [outputStyle, setOutputStyle] = useState<React.CSSProperties>({ color: '#896C6C' });
-
     const power = (base: number, exp: number): number => {
         let result = 1;
         for (let i = 0; i < exp; i++) {
             result *= base;
-        }
-        return result;
+        }return result;
     };
 
     const performOperation = (operation: string) => {
         const num1 = parseFloat(firstNumber);
         const num2 = parseFloat(secondNumber);
-
         if (isNaN(num1) || isNaN(num2)) {
             setOutput("Please enter valid numbers.");
             setOutputStyle({ color: 'red' });
@@ -81,25 +78,21 @@ export default function Calculator() {
         let result: number | string;
         switch (operation) {
             case 'add': result = num1 + num2; break;
-            case 'subtract': result = num1 - num2; break;
+             case 'subtract': result = num1 - num2; break;
             case 'multiply': result = num1 * num2; break;
             case 'divide': result = num2 === 0 ? "Cannot divide by zero" : num1 / num2; break;
-            case 'power': result = power(num1, num2); break;
+             case 'power': result = power(num1, num2); break;
             default: return;
         }
-
         setOutput(result);
         setOutputStyle({ color: typeof result === 'number' && result < 0 ? 'red' : '#896C6C' });
     };
-
     const clearCalculator = () => {
         setFirstNumber('');
         setSecondNumber('');
         setOutput('');
         setOutputStyle({ color: '#896C6C' });
-    };
-
-    return (
+    };return (
         <CalculatorWrapper>
             <div className="inputs">
                 <label htmlFor="first-number">First Number:</label>

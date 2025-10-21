@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-
 const Main = styled.main`
   width: 70%;
   padding: 30px;
@@ -10,7 +9,6 @@ const Main = styled.main`
     width: 100%;
   }
 `;
-
 export default function Credits() {
     return (
         <Main>

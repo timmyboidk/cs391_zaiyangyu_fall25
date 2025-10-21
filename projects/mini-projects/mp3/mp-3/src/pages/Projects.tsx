@@ -6,7 +6,6 @@ const Main = styled.main`
   padding: 30px;
   background-color: #ffffff;
   min-height: 70vh;
-
   article {
     border-bottom: 1px solid #EEE6CA;
     padding-bottom: 20px;
@@ -35,7 +34,6 @@ const Main = styled.main`
     width: 100%;
   }
 `;
-
 export default function Projects(){
     return (
         <Main>
