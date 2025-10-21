@@ -11,23 +11,10 @@ export const GlobalStyle = createGlobalStyle`
         list-style: none;
     }
 
-    html, body, #root {
-        height: 100%;
-    }
-
     body {
         background-color: #F5FAE1;
         color: #5C4B4B;
         font-size: calc(1rem + 0.2vw);
     }
 
-    #root {
-        display: flex;
-        flex-direction: column;
-        max-width: 1200px;
-        margin: 0 auto;
-        border-left: 1px solid #EEE6CA;
-        border-right: 1px solid #EEE6CA;
-        width: 100%;
-    }
 `;
