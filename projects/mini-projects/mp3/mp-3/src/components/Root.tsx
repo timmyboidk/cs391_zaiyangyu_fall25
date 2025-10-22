@@ -15,7 +15,7 @@ import Credits from '../pages/Credits';
 const AppWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
-  flex-grow: 1; /* This is the key to the sticky footer */
+  flex-grow: 1; 
 `;
 export default function Root() {
     return (

@@ -4,8 +4,25 @@ const Main = styled.main`
     width: 70%;
     padding: 30px;
     background-color: #ffffff;
-    flex-grow: 1; /* Allows this element to grow and fill space */
+    flex-grow: 1;
+    p, ul {
+        line-height: 1.7;
+        margin-bottom: 15px;
+    }
+    h2 {
+        color: #896C6C;
+        margin-bottom: 15px;
+        font-size: calc(1.25rem + 1vw);
+        font-weight: 300;
+        border-bottom: 2px solid #E5BEB5;
+        padding-bottom: 10px;
+    }
 
+    h3 {
+        margin-top: 20px;
+        margin-bottom: 8px;
+        color: #765a5a;
+    } 
     .profile-pic {
         display: block;
         max-width: 250px;
@@ -15,8 +32,16 @@ const Main = styled.main`
 
     @media screen and (max-width: 750px) {
         width: 100%;
-        order: 2; /* Ensures main content is below nav on mobile */
+        order: 2;
+        padding: 20px;
         text-align: center;
+
+        h2 {
+            text-align: center;
+        }
+        p {
+            text-align: left; }
+
         .profile-pic { margin: 20px auto 0; }
     }
 `;
