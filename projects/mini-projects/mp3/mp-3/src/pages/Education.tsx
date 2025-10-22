@@ -4,6 +4,7 @@ const Main = styled.main`
     width: 70%;
     padding: 30px;
     background-color: #ffffff;
+    min-height: calc(100vh - 155px);
     flex-grow: 1;
     p, ul {
         line-height: 1.7;
@@ -15,6 +16,7 @@ const Main = styled.main`
         font-size: calc(1.25rem + 1vw);
         font-weight: 300;
         border-bottom: 2px solid #E5BEB5;
+        
         padding-bottom: 10px;
     }
 
