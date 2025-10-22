@@ -6,10 +6,12 @@ const Main = styled.main`
     padding: 30px;
     background-color: #ffffff;
     flex-grow: 1;
+
     p, ul {
         line-height: 1.7;
         margin-bottom: 15px;
     }
+
     h2 {
         color: #896C6C;
         margin-bottom: 15px;
@@ -24,26 +26,44 @@ const Main = styled.main`
         margin-bottom: 8px;
         color: #765a5a;
     }
-    .profile-pic {
-        display: block;
-        max-width: 250px;
+
+    article {
+        border-bottom: 1px solid #EEE6CA;
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+        &:last-child {
+            border-bottom: none;
+        }
+    }
+
+    .calculator-container {
+        padding: 25px;
+        /* FIX: Corrected the image path here */
+        background-image: url('/calc.png');
+        background-size: cover;
+        background-position: center;
         border-radius: 10px;
-        margin-top: 20px;
+        border: none;
+
+        h2 {
+            color: #ffffff;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+            border-bottom-color: #ffffff;
+        }
     }
 
     @media screen and (max-width: 750px) {
         width: 100%;
         order: 2;
         padding: 20px;
-        text-align: center;
 
         h2 {
             text-align: center;
         }
-        p {
-            text-align: left; }
 
-        .profile-pic { margin: 20px auto 0; }
+        p {
+            text-align: left;
+        }
     }
 `;
 export default function Projects(){
