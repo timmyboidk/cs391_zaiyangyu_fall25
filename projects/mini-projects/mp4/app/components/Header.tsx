@@ -4,13 +4,15 @@ import Link from 'next/link';
 
 export default function Header() {
     return (
-        <header className="w-full max-w-4xl flex justify-between items-center pb-4 border-b">
-            <h1 className="text-3xl font-bold">MP-4 Currency App</h1>
+        <header className="w-full max-w-4xl flex justify-between items-center pb-4 border-b border-gray-700">
+            <h1 className="text-2xl sm:text-3xl font-bold text-blue-800">
+                Currency Converter
+            </h1>
             <nav className="flex gap-4">
-                <Link href="/" className="text-blue-600 hover:underline">
+                <Link href="/" className="text-blue-800 hover:text-blue-200">
                     Home
                 </Link>
-                <Link href="/about" className="text-blue-600 hover:underline">
+                <Link href="/about" className="text-blue-800 hover:text-blue-200">
                     About
                 </Link>
             </nav>
