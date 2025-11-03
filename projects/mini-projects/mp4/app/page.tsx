@@ -1,0 +1,11 @@
+import Header from '@/app/components/Header';
+import CurrencyConverter from '@/app/components/CurrencyConverter';
+
+export default function Home() {
+    return (
+        <main className="flex min-h-screen flex-col items-center p-6 sm:p-12">
+            <Header />
+            <CurrencyConverter />
+        </main>
+    );
+}
