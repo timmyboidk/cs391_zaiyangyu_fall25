@@ -1,11 +1,8 @@
-'use client'; // This component MUST be a client component
+'use client';
 
 import { useState } from 'react';
-// Import the new server action
 import {getConversionRates} from "@/lib/getConversionRate";
 
-// --- Type Definitions ---
-// Full names for the dropdown
 const currencies = [
     { code: 'USD', name: 'USD - US Dollar' },
     { code: 'EUR', name: 'EUR - Euro' },
@@ -14,7 +11,6 @@ const currencies = [
     { code: 'CNY', name: 'CNY - Chinese Yuan' },
 ];
 
-// The shape of our result state
 type ResultData = {
     from: string;
     inputAmount: number;
@@ -24,18 +20,14 @@ type ResultData = {
     }[];
 };
 
-// --- Component ---
 export default function CurrencyConverter() {
-    // Form input states
     const [amount, setAmount] = useState('100');
     const [fromCurrency, setFromCurrency] = useState('USD');
 
-    // App status states
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState<string | null>(null);
     const [result, setResult] = useState<ResultData | null>(null);
 
-    // --- Form Submission ---
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         setLoading(true);
@@ -49,7 +41,6 @@ export default function CurrencyConverter() {
             return;
         }
 
-        // Call the new Server Action
         const response = await getConversionRates(fromCurrency, amountNum);
 
         if (response.error) {
@@ -61,10 +52,8 @@ export default function CurrencyConverter() {
         setLoading(false);
     };
 
-    // --- Render ---
     return (
         <div className="w-full max-w-2xl mt-8">
-            {/* --- Input Form (Styled like NewPostForm.tsx) --- */}
             <form
                 onSubmit={handleSubmit}
                 className="bg-gray-900 p-6 sm:p-8 rounded shadow-xl border border-gray-700"
@@ -88,7 +77,6 @@ export default function CurrencyConverter() {
                         />
                     </div>
 
-                    {/* From Currency Dropdown (More user-friendly) */}
                     <div className="sm:col-span-2">
                         <label
                             htmlFor="fromCurrency"
@@ -111,11 +99,9 @@ export default function CurrencyConverter() {
                     </div>
                 </div>
 
-                {/* Submit Button (Squared Button) */}
                 <button
                     type="submit"
                     disabled={loading}
-                    // --- FIX: Combined className onto a single line ---
                     className="w-full rounded mt-6 p-3 text-white font-semibold shadow-sm bg-blue-600 hover:bg-blue-700 disabled:bg-gray-600 disabled:text-gray-400"
                 >
                     {loading ? 'Converting...' : 'Convert'}

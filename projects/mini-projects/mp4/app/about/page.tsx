@@ -5,8 +5,6 @@ export default function AboutPage() {
         <main className="flex min-h-screen flex-col items-center p-6 sm:p-12">
             <Header />
             <div className="w-full max-w-4xl mt-8 bg-gray-900 p-8 rounded shadow-xl border border-gray-700">
-
-                {/* Section 1: Introduction */}
                 <h1 className="text-3xl font-bold mb-4 text-blue-100">
                     About This Project
                 </h1>

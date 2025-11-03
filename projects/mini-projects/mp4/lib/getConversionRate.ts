@@ -1,13 +1,9 @@
-'use server'; // This is CRITICAL for security and the Server Action pattern
+'use server';
 
-// --- Configuration ---
-// Use the new key from your .env.local file
 const API_KEY = process.env.CURRENCYFREAKS_API_KEY;
 const API_BASE_URL = 'https://api.currencyfreaks.com/v2.0/rates/latest';
 const ALL_CURRENCIES = ['USD', 'CNY', 'JPY', 'GBP', 'EUR'];
 
-// --- API Response Type ---
-// This defines the shape of the data we expect from currencyfreaks.com
 interface CurrencyFreaksResponse {
     date: string;
     base: 'USD';
@@ -16,7 +12,6 @@ interface CurrencyFreaksResponse {
     };
 }
 
-// --- Our Custom Result Types (These are UNCHANGED) ---
 interface Rate {
     currency: string;
     amount: number;
@@ -30,10 +25,8 @@ interface ConversionResult {
     error?: string;
 }
 
-/**
- * This is the main Server Action called by the client.
- * It fetches rates for all currencies and performs math on the server.
- */
+//  fetches rates for all currencies and performs math on the server.
+
 export async function getConversionRates(
     fromCurrency: string,
     amount: number
@@ -42,12 +35,10 @@ export async function getConversionRates(
         return { error: 'API key is not configured on the server.' };
     }
 
-    // Join all currencies for the 'symbols' parameter
     const symbols = ALL_CURRENCIES.join(',');
     const apiURL = `${API_BASE_URL}?apikey=${API_KEY}&symbols=${symbols}`;
 
     try {
-        // --- 1. Make a SINGLE API Call ---
         const res = await fetch(apiURL);
         if (!res.ok) {
             throw new Error(`API Network Error: ${res.statusText}`);
@@ -60,9 +51,7 @@ export async function getConversionRates(
             throw new Error(data.message || 'Failed to fetch rates from API.');
         }
 
-        // --- 2. Perform Conversion Math on the Server ---
-
-        // The API returns all rates as strings, so we must parse them.
+        // The API returns all rates as strings
         const rates: { [key: string]: number } = {};
         for (const key in data.rates) {
             rates[key] = parseFloat(data.rates[key]);
@@ -77,13 +66,13 @@ export async function getConversionRates(
             throw new Error(`Could not find a valid rate for ${fromCurrency}`);
         }
 
-        // First, convert the user's input amount to our base (USD)
+        //convert the user's input amount to  base (USD)
         const amountInUSD = amount / fromRate;
 
-        // Determine which 4 currencies we need to convert *to*
+        // Determine which 4 currencies need to convert
         const toCurrencies = ALL_CURRENCIES.filter((c) => c !== fromCurrency);
 
-        // Now, convert that USD amount to the other 4 currencies
+        // convert that USD amount to the other 4 currencies
         const successfulRates: Rate[] = toCurrencies.map((toCurrency) => {
             const toRate = rates[toCurrency];
             const convertedAmount = amountInUSD * toRate;
@@ -94,7 +83,6 @@ export async function getConversionRates(
             };
         });
 
-        // --- 3. Return the Same Data Shape as Before ---
         return {
             data: {
                 from: fromCurrency,
