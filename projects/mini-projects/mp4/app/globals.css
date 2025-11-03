@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* We are defining CSS variables for our color palette.
+  This makes it easy to manage the theme.
+*/
+:root {
+    /* Dark backgrounds */
+    --color-bg-primary: rgb(17, 24, 39); /* Tailwind gray-900 */
+    --color-bg-secondary: rgb(31, 41, 55); /* Tailwind gray-800 */
+
+    /* Light text */
+    --color-text-primary: rgb(243, 244, 246); /* Tailwind gray-100 */
+    --color-text-secondary: rgb(156, 163, 175); /* Tailwind gray-400 */
+
+    /* Borders and dividers */
+    --color-border: rgb(55, 65, 81); /* Tailwind gray-700 */
+
+    /* Accents - using financial colors */
+    --color-accent-blue: rgb(59, 130, 246);
+    --color-accent-green: rgb(34, 197, 94);
+    --color-accent-red: rgb(239, 68, 68);
+
+    /* Darker shades for alerts */
+    --color-bg-green-dark: rgb(20, 83, 45);
+    --color-border-green-dark: rgb(22, 101, 52);
+    --color-text-green-dark: rgb(187, 247, 208);
+
+    --color-bg-red-dark: rgb(127, 29, 29);
+    --color-border-red-dark: rgb(153, 27, 27);
+    --color-text-red-dark: rgb(254, 205, 211);
+}
+
+body {
+    /* Apply the primary background and text colors from our variables */
+    background-color: var(--color-bg-primary);
+    color: var(--color-text-primary);
+}
+
+/* Override default input styles to match the dark theme.
+  This gives text inputs a dark background and light text.
+*/
+input[type='text'],
+input[type='number'] {
+    background-color: var(--color-bg-primary);
+    color: var(--color-text-primary);
+    border-color: var(--color-border);
+}
+
+/* Ensure placeholder text is also visible */
+input::placeholder {
+    color: var(--color-text-secondary);
+}
