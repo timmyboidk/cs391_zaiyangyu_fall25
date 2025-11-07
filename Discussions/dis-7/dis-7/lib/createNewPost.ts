@@ -1,17 +1,27 @@
+"use server";
+
 import getCollection, { POSTS_COLLECTION } from "@/db";
-import {PostProps} from "@/type";
+import { PostProps } from "@/type";
 
-export default async function getAllPosts(): Promise<PostProps[]> {
+export default async function createNewPost(
+    title: string,
+    content: string,
+): Promise<PostProps> {
+    console.log("creating new post");
+    const p = {
+        title: title,
+        content: content,
+        upvotes: 0,
+        downvotes: 0,
+    };
+
+    // insert in DB
     const postsCollection = await getCollection(POSTS_COLLECTION);
-    const data = await postsCollection.find().toArray();
+    const res = await postsCollection.insertOne({ ...p });
 
-    const posts: PostProps[] = data.map((p) => ({
-        id: p._id.toHexString(),
-        title: p.title,
-        content: p.content,
-        upvotes: p.upvotes,
-        downvotes: p.downvotes,
-    }));
+    if (!res.acknowledged) {
+        throw new Error("DB insert failed");
+    }
 
-    return posts.reverse();
+    return { ...p, id: res.insertedId.toHexString() };
 }
