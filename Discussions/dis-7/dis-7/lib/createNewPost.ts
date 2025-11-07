@@ -1,16 +1,17 @@
-"use server";
+import getCollection, { POSTS_COLLECTION } from "@/db";
 import {PostProps} from "@/type";
 
-export default async function createNewPost(
-    title: string,
-    content: string,
-): Promise<PostProps> {
-console.log("Creating new post...");
-    const p = {
-        title: title,
-        content: content,
-        upvotes: 0,
-        downvotes: 0,
-    };
-    return {...p,id:"newId"};
+export default async function getAllPosts(): Promise<PostProps[]> {
+    const postsCollection = await getCollection(POSTS_COLLECTION);
+    const data = await postsCollection.find().toArray();
+
+    const posts: PostProps[] = data.map((p) => ({
+        id: p._id.toHexString(),
+        title: p.title,
+        content: p.content,
+        upvotes: p.upvotes,
+        downvotes: p.downvotes,
+    }));
+
+    return posts.reverse();
 }
