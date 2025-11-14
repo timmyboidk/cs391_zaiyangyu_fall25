@@ -9,6 +9,7 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@mui/icons-material": "^7.3.5",
     "@mui/joy": "^5.0.0-beta.52",
     "@mui/material": "^7.3.4",
     "mongodb": "^7.0.0",
