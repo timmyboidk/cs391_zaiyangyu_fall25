@@ -20,6 +20,6 @@ export default async function RedirectPage({
         return redirect("/"); // Redirect home if alias not found
     }
 
-    // Requirement 4: Users must be redirected
+    // Users must be redirected
     redirect(url);
 }

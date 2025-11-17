@@ -1,4 +1,4 @@
-import {MongoClient, Db, Collection, Document} from "mongodb";
+import { MongoClient, Db, Collection, Document } from "mongodb";
 
 const MONGO_URI = process.env.MONGO_URI as string;
 if (!MONGO_URI) {
@@ -11,7 +11,7 @@ export const URLS_COLLECTION = "urls-collection";
 let client: MongoClient | null = null;
 let db: Db | null = null;
 
-async function connect<T extends Document = Document>(): Promise<Db> {
+async function connect(): Promise<Db> {
     if (!client) {
         client = new MongoClient(MONGO_URI);
         await client.connect();
@@ -23,7 +23,7 @@ export default async function getCollection<T extends Document = Document>(
     collectionName: string,
 ): Promise<Collection<T>> {
     if (!db) {
-        db = await connect<T>();
+        db = await connect();
     }
     return db.collection<T>(collectionName);
 }

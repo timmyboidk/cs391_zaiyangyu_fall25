@@ -3,7 +3,7 @@
 import getCollection, {URLS_COLLECTION} from "@/db";
 import {UrlEntry} from "@/type";
 
-// Requirement 2: Backend URL validation
+//  Backend URL validation
 function isValidUrl(urlString: string): boolean {
     try {
         new URL(urlString);
@@ -13,7 +13,7 @@ function isValidUrl(urlString: string): boolean {
     }
 }
 
-// Define a type for our document, extending UrlEntry
+// Define a type
 type UrlDoc = UrlEntry & { _id: string };
 
 export default async function createShortUrl(
@@ -28,10 +28,10 @@ export default async function createShortUrl(
     const urlCollection = await getCollection<UrlDoc>(URLS_COLLECTION);
 
     // Use the alias as the _id to enforce uniqueness
-    const newEntry: UrlDoc = { // This is the fix
+    const newEntry: UrlDoc = {
         _id: alias,
         url: url,
-        alias: alias, // This property was missing
+        alias: alias,
     };
 
     try {
@@ -44,7 +44,7 @@ export default async function createShortUrl(
         return {alias: alias, url: url};
 
     } catch (error: unknown) {
-        // Requirement 3: Repeated aliases must not be allowed
+        // Repeated aliases  not  allowed
         if (typeof error === 'object' && error !== null && 'code' in error && (error as {
             code: unknown
         }).code === 11000) {
