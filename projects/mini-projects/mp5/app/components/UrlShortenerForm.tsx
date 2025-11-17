@@ -1,8 +1,9 @@
 "use client";
 import {Button, FormHelperText, TextField, InputAdornment, IconButton} from "@mui/material";
-import {useEffect, useState} from "react";
+import {useEffect, useState, FormEvent, ChangeEvent} from "react";
 import createShortUrl from "@/lib/createShortUrl";
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
+import {isValidUrl} from "@/lib/validator";
 
 export default function UrlShortenerForm() {
     const [url, setUrl] = useState("");
@@ -11,19 +12,25 @@ export default function UrlShortenerForm() {
     const [successUrl, setSuccessUrl] = useState<string | null>(null);
     const [baseUrl, setBaseUrl] = useState("");
     const [copied, setCopied] = useState(false);
-
     useEffect(() => {
         if (typeof window !== "undefined") {
-            // eslint-disable-next-line react-hooks/set-state-in-effect
-            setBaseUrl(`${window.location.origin}/r/`);
+            setTimeout(() => {
+                setBaseUrl(`${window.location.origin}/r/`);
+            }, 0);
         }
-    }, []); //ensures this runs only once on mount
+    }, []);
 
-    const handleSubmit = async (event: React.FormEvent) => {
+    const handleSubmit = async (event: FormEvent) => {
         event.preventDefault();
         setError(null);
         setSuccessUrl(null);
         setCopied(false);
+
+        // Frontend Validation
+        if (!isValidUrl(url)) {
+            setError("Invalid URL. Please check for typos (e.g., .com is missing).");
+            return;
+        }
 
         createShortUrl(alias, url)
             .then((newUrlEntry) => {
@@ -47,10 +54,7 @@ export default function UrlShortenerForm() {
     };
 
     return (
-        <form
-            className={"w-full max-w-md rounded-xl p-6 md:p-8 shadow-lg bg-[#CBF3BB]"}
-            onSubmit={handleSubmit}
-        >
+        <form className={"w-full max-w-md rounded-xl p-6 md:p-8 shadow-lg bg-[#CBF3BB]"} onSubmit={handleSubmit}>
             <h3 className="text-3xl font-bold text-center text-gray-800 mb-6">URL Shortener</h3>
             <TextField
                 variant="filled"
@@ -62,7 +66,7 @@ export default function UrlShortenerForm() {
                 }}
                 label="Full URL (e.g., https://...)"
                 value={url}
-                onChange={(e: React.ChangeEvent<HTMLInputElement>) => setUrl(e.target.value)}
+                onChange={(e: ChangeEvent<HTMLInputElement>) => setUrl(e.target.value)}
                 InputProps={{disableUnderline: true}}
             />
             <TextField
@@ -74,7 +78,7 @@ export default function UrlShortenerForm() {
                 }}
                 label="Desired Alias"
                 value={alias}
-                onChange={(e: React.ChangeEvent<HTMLInputElement>) => setAlias(e.target.value)}
+                onChange={(e: ChangeEvent<HTMLInputElement>) => setAlias(e.target.value)}
                 InputProps={{
                     disableUnderline: true,
                     startAdornment: (
@@ -84,7 +88,6 @@ export default function UrlShortenerForm() {
                     ),
                 }}
             />
-
             {error && (
                 <FormHelperText error={true} sx={{
                     color: 'red.900',
@@ -97,7 +100,6 @@ export default function UrlShortenerForm() {
                     {error}
                 </FormHelperText>
             )}
-
             <div className={"w-full flex justify-center mt-6"}>
                 <Button
                     sx={{
