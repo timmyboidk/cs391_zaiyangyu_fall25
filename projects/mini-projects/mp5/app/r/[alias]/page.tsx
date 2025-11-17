@@ -1,25 +1,24 @@
 import getUrlByAlias from "@/lib/getUrlByAlias";
-import {redirect} from "next/navigation";
+import { redirect } from "next/navigation";
 
 export default async function RedirectPage({
                                                params,
                                            }: {
-    params: { alias: string };
+    params: Promise<{ alias: string }>;
 }) {
-    const {alias} = params;
+    const { alias } = await params;
 
     let url = null;
     try {
         url = await getUrlByAlias(alias);
     } catch (err) {
         console.error("Error fetching URL by alias:", err);
-        return redirect("/"); // Redirect home on error
+        return redirect("/");
     }
 
     if (!url) {
-        return redirect("/"); // Redirect home if alias not found
+        return redirect("/");
     }
 
-    // Users must be redirected
     redirect(url);
 }
