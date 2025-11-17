@@ -1,19 +1,17 @@
 export function isValidUrl(urlString: string): boolean {
-    try {
-        const url = new URL(urlString);
+    const commonTlds = '(com|us|gov|cn|uk|jp|org|net|info|biz|co|io|au|ca|de|fr|in|edu)';
 
-        // Protocol
-        if (url.protocol !== "http:" && url.protocol !== "https:") {
-            return false;
-        }
+    const urlRegex = new RegExp(
+        `^` +
+        `(?:https?:\\/\\/)?` + // Optional protocol (e.g., https://)
+        `www\\.` + // MANDATORY www.
+        `[a-zA-Z0-9-]+\\.` + // Domain name part (e.g., bilibili.)
+        `${commonTlds}` + // Mandatory TLD (e.g., com)
+        `(?::\\d{2,5})?` + // Optional port number
+        `(?:[/?#].*)?` + // Optional path, query, or fragment
+        `$`, // End of string
+        'i' // Case-insensitive
+    );
 
-        // This regex requires at least one dot and a TLD of 2+ characters
-        // Rejects: "youtube.c", "localhost", "com"
-        // Accepts: "youtube.com", "google.co.uk"
-        const hostnameRegex = /^([a-zA-Z0-9-]+\.)+[a-zA-Z]{2,}$/;
-        return hostnameRegex.test(url.hostname);
-
-    } catch {
-        return false;
-    }
+    return urlRegex.test(urlString.trim());
 }
