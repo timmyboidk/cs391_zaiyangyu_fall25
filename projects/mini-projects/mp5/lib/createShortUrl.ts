@@ -9,25 +9,33 @@ export default async function createShortUrl(
     alias: string,
     url: string,
 ): Promise<UrlEntry> {
+
+    // prevent " https://..." errors
+    const cleanUrl = url.trim();
+
     // Backend Validation
-    if (!isValidUrl(url)) {
-        throw new Error("Invalid URL. Please provide a valid URL (e.g., https://google.com)");
+    if (!isValidUrl(cleanUrl)) {
+        throw new Error("Invalid URL. Please check the structure (must include www. and a valid TLD).");
+    }
+    //  Prepend protocol if missing.
+    let standardizedUrl = cleanUrl;
+    if (!standardizedUrl.match(/^https?:\/\//i)) {
+        standardizedUrl = 'https://' + standardizedUrl;
     }
 
     const urlCollection = await getCollection<UrlDoc>(URLS_COLLECTION);
-
     const newEntry: UrlDoc = {
         _id: alias,
-        url: url,
+        url: standardizedUrl, // Save the ABSOLUTE URL
         alias: alias,
     };
+
     try {
         const res = await urlCollection.insertOne(newEntry);
         if (!res.acknowledged) {
             throw new Error("DB insert failed");
         }
-        return {alias: alias, url: url};
-
+        return {alias: alias, url: standardizedUrl};
     } catch (error: unknown) {
         if (typeof error === 'object' && error !== null && 'code' in error && (error as {
             code: unknown
