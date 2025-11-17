@@ -1,16 +1,26 @@
 export function isValidUrl(urlString: string): boolean {
-    const commonTlds = '(com|us|gov|cn|uk|jp|org|net|info|biz|co|io|au|ca|de|fr|in|edu)';
+    // Regex Explanation:
+    // ^                        : Start of string
+    // (?:https?:\/\/)?         : Optional Protocol (http:// or https://)
+    // (?:www\.)?               : Optional www.
+    // [a-zA-Z0-9-]+            : Main Domain Name (e.g. github)
+    // (?:\.[a-zA-Z0-9-]+)* : Optional Subdomains (e.g. .api in api.github)
+    // \.[a-zA-Z]{2,}           : Mandatory TLD (e.g. .com, .io, .org, .cn) - Must be at least 2 letters
+    // (?::\d{2,5})?            : Optional Port (e.g. :3000)
+    // (?:[/?#].*)?             : Optional Path, Query, or Fragment
+    // $                        : End of string
 
     const urlRegex = new RegExp(
         `^` +
-        `(?:https?:\\/\\/)?` + // Optional protocol (e.g., https://)
-        `www\\.` + // MANDATORY www.
-        `[a-zA-Z0-9-]+\\.` + // Domain name part (e.g., bilibili.)
-        `${commonTlds}` + // Mandatory TLD (e.g., com)
-        `(?::\\d{2,5})?` + // Optional port number
-        `(?:[/?#].*)?` + // Optional path, query, or fragment
-        `$`, // End of string
-        'i' // Case-insensitive
+        `(?:https?:\\/\\/)?` +
+        `(?:www\\.)?` +
+        `[a-zA-Z0-9-]+` +
+        `(?:\\.[a-zA-Z0-9-]+)*` +
+        `\\.[a-zA-Z]{2,}` +
+        `(?::\\d{2,5})?` +
+        `(?:[/?#].*)?` +
+        `$`,
+        'i'
     );
 
     return urlRegex.test(urlString.trim());
