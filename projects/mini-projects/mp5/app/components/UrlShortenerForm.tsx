@@ -12,13 +12,12 @@ export default function UrlShortenerForm() {
     const [baseUrl, setBaseUrl] = useState("");
     const [copied, setCopied] = useState(false);
 
-    // Set base URL only on the client
     useEffect(() => {
         if (typeof window !== "undefined") {
             // eslint-disable-next-line react-hooks/set-state-in-effect
             setBaseUrl(`${window.location.origin}/r/`);
         }
-    }, []); // This is the correct way to get client-side data
+    }, []); //ensures this runs only once on mount
 
     const handleSubmit = async (event: React.FormEvent) => {
         event.preventDefault();
@@ -48,24 +47,36 @@ export default function UrlShortenerForm() {
     };
 
     return (
-        <form className={"w-96 rounded-xl p-4 bg-sky-400"} onSubmit={handleSubmit}>
-            <h3 className="text-2xl font-bold text-center text-white mb-3">URL Shortener</h3>
+        <form
+            className={"w-full max-w-md rounded-xl p-6 md:p-8 shadow-lg bg-[#CBF3BB]"}
+            onSubmit={handleSubmit}
+        >
+            <h3 className="text-3xl font-bold text-center text-gray-800 mb-6">URL Shortener</h3>
             <TextField
                 variant="filled"
-                sx={{backgroundColor: "white", width: "10rows0%", mb: 2}}
+                sx={{
+                    backgroundColor: "#ECF4E8",
+                    width: "100%",
+                    mb: 2,
+                    borderRadius: '4px'
+                }}
                 label="Full URL (e.g., https://...)"
                 value={url}
-                // Fix for 'e' implicitly has an 'any' type
                 onChange={(e: React.ChangeEvent<HTMLInputElement>) => setUrl(e.target.value)}
+                InputProps={{disableUnderline: true}}
             />
             <TextField
                 variant="filled"
-                sx={{backgroundColor: "white", width: "100%"}}
+                sx={{
+                    backgroundColor: "#ECF4E8",
+                    width: "100%",
+                    borderRadius: '4px'
+                }}
                 label="Desired Alias"
                 value={alias}
-                // Fix for 'e' implicitly has an 'any' type
                 onChange={(e: React.ChangeEvent<HTMLInputElement>) => setAlias(e.target.value)}
                 InputProps={{
+                    disableUnderline: true,
                     startAdornment: (
                         <InputAdornment position="start">
                             <span className="text-gray-500 text-sm">{baseUrl}</span>
@@ -78,7 +89,7 @@ export default function UrlShortenerForm() {
                 <FormHelperText error={true} sx={{
                     color: 'red.900',
                     fontWeight: 'bold',
-                    backgroundColor: 'white',
+                    backgroundColor: 'rgba(255, 200, 200, 0.8)',
                     padding: '0.5rem',
                     marginTop: '1rem',
                     borderRadius: '4px'
@@ -87,9 +98,18 @@ export default function UrlShortenerForm() {
                 </FormHelperText>
             )}
 
-            <div className={"w-full flex justify-center mt-4"}>
+            <div className={"w-full flex justify-center mt-6"}>
                 <Button
-                    sx={{width: "100px"}}
+                    sx={{
+                        width: "120px",
+                        height: "40px",
+                        fontWeight: "bold",
+                        backgroundColor: "#93BFC7",
+                        color: "#FFFFFF",
+                        '&:hover': {
+                            backgroundColor: "#80A8B1"
+                        }
+                    }}
                     variant="contained"
                     type="submit"
                     disabled={url === "" || alias === ""}
@@ -99,22 +119,22 @@ export default function UrlShortenerForm() {
             </div>
 
             {successUrl && (
-                <div className="mt-4 p-3 bg-white rounded">
-                    <p className="text-sm font-semibold text-green-800">Success! Your link:</p>
+                <div className="mt-6 p-3 bg-[#ABE7B2] rounded shadow-sm">
+                    <p className="text-sm font-semibold text-gray-800">Success! Your link:</p>
                     <div className="flex items-center justify-between">
                         <a
                             href={successUrl}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="text-blue-600 underline truncate pr-2"
+                            className="text-blue-700 underline truncate pr-2"
                         >
                             {successUrl}
                         </a>
                         <IconButton onClick={handleCopy} size="small" title="Copy URL">
-                            {copied ? <ContentCopyIcon sx={{color: 'green.500'}}/> : <ContentCopyIcon/>}
+                            {copied ? <ContentCopyIcon sx={{color: 'green'}}/> : <ContentCopyIcon/>}
                         </IconButton>
                     </div>
-                    {copied && <span className="text-xs text-green-700">Copied to clipboard!</span>}
+                    {copied && <span className="text-xs text-green-800">Copied to clipboard!</span>}
                 </div>
             )}
         </form>
