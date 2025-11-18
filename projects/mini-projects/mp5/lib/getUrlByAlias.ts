@@ -1,5 +1,5 @@
-import getCollection, {URLS_COLLECTION} from "@/lib/db";
-import {UrlEntry} from "@/lib/type";
+import getCollection, {URLS_COLLECTION} from "@/db";
+import {UrlEntry} from "@/type";
 
 type UrlDoc = UrlEntry & { _id: string };
 
