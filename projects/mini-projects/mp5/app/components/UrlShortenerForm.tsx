@@ -8,10 +8,11 @@ import {isValidUrl} from "@/lib/validator";
 export default function UrlShortenerForm() {
     const [url, setUrl] = useState("");
     const [alias, setAlias] = useState("");
-    const [error, setError] = useState<string | null>(null);
+     const [error, setError] = useState<string | null>(null);
     const [successUrl, setSuccessUrl] = useState<string | null>(null);
     const [baseUrl, setBaseUrl] = useState("");
     const [copied, setCopied] = useState(false);
+
     useEffect(() => {
         if (typeof window !== "undefined") {
             setTimeout(() => {
