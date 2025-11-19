@@ -30,7 +30,7 @@ export default async function createShortUrl(
     }
 
     // Cycle Prevention
-    if (standardizedUrl.includes("cs391-url-shortener") || standardizedUrl.includes("localhost")) {
+    if (standardizedUrl.includes("cs391-zaiyangyu-fall25-vymr") || standardizedUrl.includes("localhost")) {
         throw new Error("Cycle detected: You cannot shorten a link from this website.");
     }
 
