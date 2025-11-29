@@ -15,13 +15,11 @@ export default function UserCard({user}: UserProps) {
             className="bg-white p-8 rounded-xl shadow-lg border border-gray-100 flex flex-col items-center gap-4 w-full">
             {user.image && (
                 <div className="relative w-24 h-24 rounded-full overflow-hidden border-4 border-[#EFECE3]">
-                    <Image
-                        src={user.image}
-                        alt="Profile"
-                        fill
-                        className="object-cover"
-                        priority
-                    />
+                    <Image src={user.image}
+                           alt="Profile"
+                           fill
+                           className="object-cover"
+                           priority/>
                 </div>
             )}
             <div className="text-center">

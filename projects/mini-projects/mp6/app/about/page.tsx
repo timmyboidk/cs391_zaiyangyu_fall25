@@ -13,13 +13,11 @@ export default function AboutPage() {
 
                 <div className="space-y-8 text-gray-700">
 
-                    {/* Section 1: Implementation vs Lecture/Requirements */}
                     <section className="space-y-4">
                         <h2 className="text-2xl font-semibold text-[#4A70A9]">1. Implementation & The OAuth Flow</h2>
                         <p>
                             This project implements the OAuth 2.0 Authorization Code Flow described in
-                            the
-                            diagram in the mp description, abstracts the complexity
+                            the diagram in the mp description, abstracts the complexity
                             using Auth.js.
                         </p>
                         <ul className="list-disc pl-5 space-y-2">
@@ -28,14 +26,15 @@ export default function AboutPage() {
                                 Login &rarr; Provider Redirect &rarr; Auth Code &rarr; Access Token).
                                 Instead of manually handling the <em>Exchange Code</em> (Step 6-9),
                                 the <code>route.ts</code> handler automates this.
-                                When you click &#34;Sign in&#34;, <code>Auth.js</code> manages the handshake with Google/GitHub,
-                                retrieves the tokens, and establishes a session.
+                                When you click &#34;Sign in&#34;, <code>Auth.js</code> manages the handshake with
+                                Google/GitHub, retrieves the tokens, and establishes a session.
                             </li>
                             <li>
                                 Following <em>Lecture 18</em>, we used the Beta
                                 version of NextAuth.
                                 The file structure (<code>auth.ts</code> in
-                                root, <code>app/api/auth/[...nextauth]/route.ts</code>) strictly follows the lecture&#39;s
+                                root, <code>app/api/auth/[...nextauth]/route.ts</code>) strictly follows the
+                                lecture&#39;s
                                 &#34;App Router&#34; guidelines to handle requests securely on the server side.
                             </li>
                             <li>
@@ -47,7 +46,6 @@ export default function AboutPage() {
                         </ul>
                     </section>
 
-                    {/* Section 2: Expected Behavior */}
                     <section className="space-y-4">
                         <h2 className="text-2xl font-semibold text-[#4A70A9]">2. Expected Behavior</h2>
                         <p>
@@ -60,18 +58,15 @@ export default function AboutPage() {
                             </li>
                             <li>
                                 Authentication: Clicking a provider will redirect you to their native
-                                login page.
-                                Upon success, you are redirected back to the app.
+                                login page.  Upon success, you are redirected back to the app.
                             </li>
                             <li>
                                 User Profile: Once logged in, the &#34;Sign In&#34; card is replaced by
-                                a User Card displaying your
-                                real profile picture, name, and email fetched from the provider.
+                                a User Card displaying your real profile picture, name, and email fetched from the provider.
                             </li>
                             <li>
                                 Session Persistence: This app <strong>persists
-                                your session</strong>.
-                                Refreshing the page will <em>not</em> log you out immediately, thanks to the database
+                                your session</strong>.  Refreshing the page will <em>not</em> log you out immediately, thanks to the database
                                 session storage.
                             </li>
                             <li>
