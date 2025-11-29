@@ -24,26 +24,26 @@ export default function AboutPage() {
                         </p>
                         <ul className="list-disc pl-5 space-y-2">
                             <li>
-                                <strong>The "Graph" Abstraction:</strong> The assignment graph shows 11 steps (Request
+                                <strong>The &#34;Graph&#34; Abstraction:</strong> The assignment graph shows 11 steps (Request
                                 Login &rarr; Provider Redirect &rarr; Auth Code &rarr; Access Token).
                                 Instead of manually handling the <em>Exchange Code</em> (Step 6-9),
                                 our <code>route.ts</code> handler automates this.
-                                When you click "Sign in", <code>Auth.js</code> manages the handshake with Google/GitHub,
+                                When you click &#34;Sign in&#34;, <code>Auth.js</code> manages the handshake with Google/GitHub,
                                 retrieves the tokens, and establishes a session.
                             </li>
                             <li>
                                 <strong>Lecture Alignment:</strong> Following <em>Lecture 18</em>, we used the Beta
                                 version of NextAuth.
                                 The file structure (<code>auth.ts</code> in
-                                root, <code>app/api/auth/[...nextauth]/route.ts</code>) strictly follows the lecture's
-                                "App Router" guidelines to handle requests securely on the server side.
+                                root, <code>app/api/auth/[...nextauth]/route.ts</code>) strictly follows the lecture&#39;s
+                                &#34;App Router&#34; guidelines to handle requests securely on the server side.
                             </li>
                             <li>
                                 <strong>Database Integration:</strong> While the assignment noted a database was
                                 optional, this iteration implements
                                 <strong>MongoDB persistence</strong> using the <code>MongoDBAdapter</code>. This means
                                 user sessions and accounts are physically stored in
-                                the <code>cs391_oauth</code> database, satisfying the "Best Practices" requirement for
+                                the <code>cs391_oauth</code> database, satisfying the &#34;Best Practices&#34; requirement for
                                 robust data handling.
                             </li>
                         </ul>
@@ -57,7 +57,7 @@ export default function AboutPage() {
                         </p>
                         <ul className="list-disc pl-5 space-y-2">
                             <li>
-                                <strong>Landing Page:</strong> If you are not authenticated, you will see a "Sign In"
+                                <strong>Landing Page:</strong> If you are not authenticated, you will see a &#34;Sign In&#34;
                                 card with options for Google and GitHub.
                             </li>
                             <li>
@@ -66,7 +66,7 @@ export default function AboutPage() {
                                 Upon success, you are redirected back to the app.
                             </li>
                             <li>
-                                <strong>User Profile:</strong> Once logged in, the "Sign In" card is replaced by
+                                <strong>User Profile:</strong> Once logged in, the &#34;Sign In&#34; card is replaced by
                                 a <strong>User Card</strong> displaying your
                                 real profile picture, name, and email fetched from the provider.
                             </li>
@@ -77,7 +77,7 @@ export default function AboutPage() {
                                 session storage.
                             </li>
                             <li>
-                                <strong>Sign Out:</strong> Clicking "Sign Out" destroys the session and returns you to
+                                <strong>Sign Out:</strong> Clicking &#34;Sign Out&#34; destroys the session and returns you to
                                 the login screen.
                             </li>
                         </ul>
