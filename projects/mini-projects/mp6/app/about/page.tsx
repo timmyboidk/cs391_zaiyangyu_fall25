@@ -6,7 +6,10 @@ export default function AboutPage() {
             <div className="z-10 w-full max-w-3xl bg-white p-8 rounded-xl shadow-lg border border-gray-100">
                 <div className="mb-6 flex items-center justify-between">
                     <h1 className="text-3xl font-bold tracking-tight">About This Project</h1>
-                    <Link href="/" className="text-sm text-[#4A70A9] hover:text-[#8FABD4] transition font-semibold">
+                    <Link
+                        href="/"
+                        className="text-sm text-[#4A70A9] hover:text-[#8FABD4] transition font-semibold"
+                    >
                         ← Back to App
                     </Link>
                 </div>
@@ -16,62 +19,41 @@ export default function AboutPage() {
                     <section className="space-y-4">
                         <h2 className="text-2xl font-semibold text-[#4A70A9]">1. Implementation & The OAuth Flow</h2>
                         <p>
-                            This project implements the OAuth 2.0 Authorization Code Flow described in
-                            the diagram in the mp description, abstracts the complexity
-                            using Auth.js.
+                            This project implements the <strong>OAuth 2.0 Authorization Code Flow</strong> described in the
+                            <em>CS391 OAuth Assignment</em>. It is built using <strong>Auth.js (NextAuth v5)</strong> to abstract
+                            the complex handshake shown in the assignment diagram.
                         </p>
                         <ul className="list-disc pl-5 space-y-2">
                             <li>
-                                The assignment graph shows 11 steps (Request
-                                Login &rarr; Provider Redirect &rarr; Auth Code &rarr; Access Token).
-                                Instead of manually handling the <em>Exchange Code</em> (Step 6-9),
-                                the <code>route.ts</code> handler automates this.
-                                When you click &#34;Sign in&#34;, <code>Auth.js</code> manages the handshake with
-                                Google/GitHub, retrieves the tokens, and establishes a session.
+                                <strong>The "Graph" Abstraction:</strong> Instead of manually handling the token exchange (Steps 6-9 in the diagram),
+                                the <code>route.ts</code> handler automates this. Clicking "Sign in" triggers <code>Auth.js</code> to manage
+                                the handshake with Google/GitHub and retrieve the user's profile securely.
                             </li>
                             <li>
-                                Following <em>Lecture 18</em>, we used the Beta
-                                version of NextAuth.
-                                The file structure (<code>auth.ts</code> in
-                                root, <code>app/api/auth/[...nextauth]/route.ts</code>) strictly follows the
-                                lecture&#39;s
-                                &#34;App Router&#34; guidelines to handle requests securely on the server side.
-                            </li>
-                            <li>
-                                Database Integration: This project implements
-                                MongoDB persistence using the <code>MongoDBAdapter</code>. This means
-                                user sessions and accounts are physically stored in
-                                my <code>cs391_oauth</code> database.
+                                <strong>No Database:</strong> Strictly following Requirement #4 ("You do not need to persist/store any data"),
+                                this application uses stateless <strong>JSON Web Tokens (JWT)</strong> for session management. No user data
+                                is stored on our servers.
                             </li>
                         </ul>
                     </section>
 
                     <section className="space-y-4">
                         <h2 className="text-2xl font-semibold text-[#4A70A9]">2. Expected Behavior</h2>
-                        <p>
-                            Here is what you should expect when interacting with this application:
-                        </p>
                         <ul className="list-disc pl-5 space-y-2">
                             <li>
-                                Landing Page: If you are not authenticated, you will see a &#34;Sign In&#34;
-                                card with options for Google and GitHub.
+                                <strong>Landing Page:</strong> Unauthenticated users see a "Sign In" card with Google and GitHub options.
                             </li>
                             <li>
-                                Authentication: Clicking a provider will redirect you to their native
-                                login page.  Upon success, you are redirected back to the app.
+                                <strong>Authentication:</strong> Clicking a provider redirects to their native login page.
+                                Upon success, you are redirected back.
                             </li>
                             <li>
-                                User Profile: Once logged in, the &#34;Sign In&#34; card is replaced by
-                                a User Card displaying your real profile picture, name, and email fetched from the provider.
+                                <strong>User Profile:</strong> Once logged in, you will see your
+                                real profile picture, name, and email fetched directly from the provider.
                             </li>
                             <li>
-                                Session Persistence: This app <strong>persists
-                                your session</strong>.  Refreshing the page will <em>not</em> log you out immediately, thanks to the database
-                                session storage.
-                            </li>
-                            <li>
-                                Sign Out: Clicking &#34;Sign Out&#34; destroys the session and returns you to
-                                the login screen.
+                                <strong>No Persistence:</strong> Per Requirement #5 ("Users do not need to stay signed in"),
+                                refreshing the page or closing the tab may result in being signed out, as sessions are not persisted in a database.
                             </li>
                         </ul>
                     </section>
