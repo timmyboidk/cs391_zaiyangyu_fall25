@@ -1,22 +1,29 @@
-import type {Metadata} from 'next';
-import {Inter} from 'next/font/google';
+import type { Metadata } from 'next';
+import { Inter } from 'next/font/google';
 import './globals.css';
 
-const inter = Inter({subsets: ['latin']});
+const inter = Inter({
+    subsets: ['latin'],
+    display: 'swap',
+    variable: '--font-inter',
+});
 
 export const metadata: Metadata = {
-    title: 'MP-4 Currency Converter',
-    description: 'A Next.js app for MP-4',
+    title: 'Currency Converter | Real-time Exchange Rates',
+    description: 'Convert between major world currencies with real-time exchange rates. Simple, fast, and accurate currency conversion.',
+    keywords: ['currency converter', 'exchange rates', 'USD', 'EUR', 'JPY', 'GBP', 'CNY'],
 };
 
 export default function RootLayout({
-                                       children,
-                                   }: Readonly<{
+    children,
+}: Readonly<{
     children: React.ReactNode;
 }>) {
     return (
-        <html lang="en">
-        <body className={inter.className}>{children}</body>
+        <html lang="en" className={inter.variable}>
+            <body className={`${inter.className} antialiased`}>
+                {children}
+            </body>
         </html>
     );
 }
